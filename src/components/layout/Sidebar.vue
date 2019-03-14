@@ -2,7 +2,7 @@
   <div class="sidebar">
     <el-menu class="sidebar-el-menu" :default-active="onRoutes" :collapse="collapse" background-color="#324157"
             text-color="#bfcbd9" active-text-color="#20a0ff" unique-opened router>
-      <el-menu-item index="/" :key="log" style="height: 70px;line-height: 70px;margin-left: -5px">
+      <el-menu-item index="/" key="log" style="height: 70px;line-height: 70px;margin-left: -5px">
         <img src="../../../static/smalllog.svg" alt="" v-if='collapse'>
         <img src="../../../static/log.svg" alt="" v-else>
       </el-menu-item>
