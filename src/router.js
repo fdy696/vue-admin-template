@@ -9,12 +9,29 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: '/home'
     },
     {
-      path: '/layout',
-      component: Layout
+      path: '/',
+      component: Layout,
+      children: [
+        {
+          path: 'home',
+          component: ()=> import('./views/home')
+        },
+        {
+          path: '403',
+          component: ()=> import('./components/403')
+        },
+        {
+          path: '*',
+          component: ()=> import('./components/404')
+        }
+      ]
+    },
+    {
+      path: '*',
+      redirect: '/404'
     }
   ]
 })
